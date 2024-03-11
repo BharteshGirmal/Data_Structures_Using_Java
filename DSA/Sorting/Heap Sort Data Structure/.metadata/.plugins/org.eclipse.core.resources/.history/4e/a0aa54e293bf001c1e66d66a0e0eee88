@@ -1,0 +1,42 @@
+
+public class Sort 
+{
+	public static void HeapSort(int arr[])
+	{
+		// First Heapify
+		for(int i=(arr.length/2)-1;i>=0;i--)
+		{
+			Heapify(arr,arr.length,i);
+		}
+		
+		// 2nd Heapify for Removing 1 elment and swap
+		for(int i=arr.length-1;i>=0;i--)
+		{
+			int temp=arr[0];
+			arr[0]=arr[i];
+			arr[i]=temp;
+			//again Heapify
+			Heapify(arr, arr.length, i);
+		}
+	}
+
+	private static void Heapify(int[] arr, int length, int i) 
+	{
+		int Maximum=i;
+		int Left=2*i+1;
+		int Right=2*i+2;
+		if(Left<length && arr[Left] > arr[Maximum])
+		{
+			Maximum=Left;
+		}
+		if(Right<length && arr[Right] > arr[Maximum])
+		{
+			Maximum=Right;
+		}
+		if(Maximum != i)
+		{
+			
+		}
+	}
+
+}
